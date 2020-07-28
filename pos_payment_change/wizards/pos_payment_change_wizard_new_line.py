@@ -20,7 +20,9 @@ class PosPaymentChangeWizardLine(models.TransientModel):
         domain=lambda s: s._domain_new_journal_id(),
     )
 
-    amount = fields.Float(string="Amount", required=True)
+    amount = fields.Monetary(string="Amount", required=True, 
+                             default=0.0, 
+                             currency_field='new_journal_id.company_currency_id')
 
     @api.model
     def _domain_new_journal_id(self):
