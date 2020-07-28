@@ -22,7 +22,7 @@ class PosPaymentChangeWizardLine(models.TransientModel):
 
     amount = fields.Monetary(string="Amount", required=True, 
                              default=0.0, 
-                             currency_field='new_journal_id.company_currency_id')
+                             currency_field='new_journal_id.currency_id')
 
     @api.model
     def _domain_new_journal_id(self):
