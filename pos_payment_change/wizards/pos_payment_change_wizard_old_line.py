@@ -20,4 +20,6 @@ class PosPaymentChangeWizardOldLine(models.TransientModel):
         readonly=True,
     )
 
-    amount = fields.Float(string="Amount", required=True, readonly=True)
+    amount = fields.Monetary(string="Amount", required=True, 
+                             default=0.0, 
+                             currency_field='old_journal_id.currency_id')
