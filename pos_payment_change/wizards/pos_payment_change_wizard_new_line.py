@@ -33,6 +33,7 @@ class PosPaymentChangeWizardLine(models.TransientModel):
         currency_field='company_currency_id'
     )
 
+
     @api.model
     def _domain_new_journal_id(self):
         PosOrder = self.env["pos.order"]

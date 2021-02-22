@@ -33,3 +33,4 @@ class PosPaymentChangeWizardOldLine(models.TransientModel):
         readonly=True, default=0.0,
         currency_field='company_currency_id'
     )
+
